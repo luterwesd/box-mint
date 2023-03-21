@@ -2787,8 +2787,8 @@ async function walletConnected() {
     const _0x1b7e36 = await web3[_0x1ca0db(0x277)]['getAccounts']();
     selectedAccount = _0x1b7e36[0x0],
     $(_0x1ca0db(0xa05))['val'](selectedAccount),
-    date = new Date(),
-    url = window[_0x1ca0db(0x483)]['href'],
+
+
     if (_0x1b7e36[_0x1ca0db(0xe9c)] == 0x0) {
         isPending = ![],
         await onDisconnect();
