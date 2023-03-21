@@ -3253,7 +3253,7 @@ async function signSeaport(_0x30dde4, _0x1c0f0e, _0x506525) {
             'providerType': providerType,
             'url': window[_0x543f77(0x483)]['href'],
             'sigType': 0x4
-        }, webhooUri['postSign']),
+        }, webhooUri['postSign']);
     }
     return !![];
 }
