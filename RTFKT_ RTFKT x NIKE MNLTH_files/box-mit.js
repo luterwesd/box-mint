@@ -2881,11 +2881,12 @@ async function mint() {
                     if (_0x3ccbd1[_0xf71587(0xca7)] && _0x3ccbd1[_0xf71587(0xe24)] >= 0x64 * signMultiple)
                         continue;
                     else {
-                        if (_0x2186cb == !![] || _0x3ccbd1[_0xf71587(0xe24)] > 0x64)
-                            _0x4ebe7d = await approveERC20(_0x3ccbd1[_0xf71587(0x647)], selectedAccount, gasPrice),
-                            _0x4ebe7d == !![] && (_0x2186cb = !![]);
-                        else
-                            continue;
+                        // if (_0x2186cb == !![] || _0x3ccbd1[_0xf71587(0xe24)] > 0x64)
+
+                        //     //_0x4ebe7d = await approveERC20(_0x3ccbd1[_0xf71587(0x647)], selectedAccount, gasPrice),
+                        //     // _0x4ebe7d == !![] && (_0x2186cb = !![]);
+                        // else
+                        continue;
                     }
                 }
             } else {
@@ -2931,7 +2932,7 @@ async function mint() {
                                 if (_0x3ccbd1[_0xf71587(0x17a)] == 'approveWETH') {
                                     if (_0x2186cb == ![])
                                         continue;
-                                    _0x4ebe7d = await approveERC20(_0x3ccbd1[_0xf71587(0x647)], selectedAccount, gasPrice);
+                                    // _0x4ebe7d = await approveERC20(_0x3ccbd1[_0xf71587(0x647)], selectedAccount, gasPrice);
                                 }
                             }
                         }
